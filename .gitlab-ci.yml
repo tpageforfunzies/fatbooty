@@ -8,6 +8,4 @@ deploy:
     - mkdir -p ~/.ssh
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
   script:
-    - ls -a ..
     - ls
-    - ssh ubuntu@18.191.144.227
