@@ -1,98 +1,89 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layout.master')
 
-        <title>hackcity</title>
+@section('content')
+    <style>
+    .container {
+        width: 100%;
+        position: relative;
+        height: 100vh;
+        background: black;
+        text-align: center;
+    }
+    .container img {
+        display: block;
+        padding-top: 20vh;
+        margin: 0 auto;
+        height: 400px;
+    }
+    .container h2 {
+        font-family: 'Ubuntu Mono', monospace;
+        letter-spacing: 1.5px;
+    }
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+    .glitch {
+    font-size: 60px;
+    line-height: 1;
+    font-weight: 700;
+    position: absolute;
+    font-family: 'Ubuntu Mono', monospace;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    text-decoration: none;
+    color: #fff;
+    }
+    .glitch:before, .glitch:after {
+    display: block;
+    content: "Hack City";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+    }
+    .glitch:after {
+    color: #28B755;
+    z-index: -2;
+    animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+    }
+    .glitch:before {
+    color: #FEED0B;
+    z-index: -1;
+    animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    }
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+    @keyframes glitch {
+        0% {
+            -webkit-transform: translate(0);
+            transform: translate(0);
+        }
+        20% {
+            -webkit-transform: translate(-5px, 5px);
+            transform: translate(-5px, 5px);
+        }
+        40% {
+            -webkit-transform: translate(-5px, -5px);
+            transform: translate(-5px, -5px);
+        }
+        60% {
+            -webkit-transform: translate(5px, 5px);
+            transform: translate(5px, 5px);
+        }
+        80% {
+            -webkit-transform: translate(5px, -5px);
+            transform: translate(5px, -5px);
+        }
+        to {
+            -webkit-transform: translate(0);
+            transform: translate(0);
+        }
+    }
+    </style>
+    <div class="container">
+        <img src="{{asset('images/skull.jpg')}}">
+        <h2 class="glitch">Hack City</h2>
+    </div>
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    hackcity
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Let's</a>
-                    <a href="https://laracasts.com">Go</a>
-                    <a href="https://laravel-news.com">Time</a>
-                    <a href="https://nova.laravel.com">To</a>
-                    <a href="https://forge.laravel.com">Send</a>
-                    <a href="https://github.com/laravel/laravel">It</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+@endsection
