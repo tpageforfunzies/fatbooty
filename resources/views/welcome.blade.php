@@ -81,16 +81,16 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    hackcity
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://laravel.com/docs">Let's</a>
+                    <a href="https://laracasts.com">Go</a>
+                    <a href="https://laravel-news.com">Time</a>
+                    <a href="https://nova.laravel.com">To</a>
+                    <a href="https://forge.laravel.com">Send</a>
+                    <a href="https://github.com/laravel/laravel">It</a>
                 </div>
             </div>
         </div>
