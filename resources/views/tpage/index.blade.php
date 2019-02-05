@@ -1,5 +1,9 @@
 @extends('layout.master')
 
+@section('title')
+    hackcity
+@endsection
+
 @section('content')
     <style>
     .container {
