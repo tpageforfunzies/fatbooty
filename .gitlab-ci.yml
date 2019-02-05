@@ -8,4 +8,7 @@ deploy:
     - mkdir -p ~/.ssh
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
   script:
+    - pwd
     - ls
+    - composer install
+    - ./vendor/bin/phpunit

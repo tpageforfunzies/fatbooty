@@ -18,7 +18,8 @@ This is still being manually deployed to the production host on master branch up
 Clone the repo via SSH.<br>
 Navigate to the root dir fatbooty/<br>
 `composer install` - ensure you have PHP >= 7.1.3 and Laravel >= 5.5<br>
-`bash build.sh dev`
+`bash build.sh dev`<br>
+This will spin up an instance of the app serving at `localhost:8000`
 
 ##### Contributing
 
