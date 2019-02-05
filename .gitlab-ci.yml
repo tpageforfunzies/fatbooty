@@ -1,11 +1,17 @@
 deploy:
-  before_script:
-    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
-    # Run ssh-agent (inside the build environment)
-    - eval $(ssh-agent -s)
-    # Add the SSH key stored in SSH_PRIVATE_KEY variable to the agent store
-    - ssh-add <(echo "$SSH_PRIVATE_KEY")
-    - mkdir -p ~/.ssh
-    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  # before_script:
+    # - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    # # Run ssh-agent (inside the build environment)
+    # - eval $(ssh-agent -s)
+    # # Add the SSH key stored in SSH_PRIVATE_KEY variable to the agent store
+    # - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    # - mkdir -p ~/.ssh
+    # - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  image: edbizarro/gitlab-ci-pipeline-php:7.2-alpine
   script:
+    - pwd
     - ls
+    - composer install --prefer-dist --no-ansi --no-interaction --no-progress
+    - cp .env.example .env
+    - php artisan key:generate
+    - ./vendor/phpunit/phpunit/phpunit -v --coverage-text --colors=never --stderr
