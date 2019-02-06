@@ -7,6 +7,7 @@ build:
   image: edbizarro/gitlab-ci-pipeline-php:7.2
   only:
     - merge_requests
+    - master
   script:
     - pwd
     - ls
