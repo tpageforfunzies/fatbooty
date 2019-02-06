@@ -1,33 +1,37 @@
 stages:
-  - build
-  # - deploy
+  # - build
+  - deploy
 
-build:
-  stage: build
-  image: edbizarro/gitlab-ci-pipeline-php:7.2
-  only:
-    - merge_requests
-  script:
-    - pwd
-    - ls
-    - composer install --prefer-dist --no-ansi --no-interaction --no-progress
-    - cp .env.example .env
-    - php artisan key:generate
-    - ./vendor/phpunit/phpunit/phpunit -v --coverage-text --colors=never --stderr
-
-# deploy_production:
-#   stage: deploy
-#   image: ubuntu:latest
+# build:
+#   stage: build
+#   image: edbizarro/gitlab-ci-pipeline-php:7.2
 #   only:
-#     - master
+#     - merge_requests
 #   script:
-#     - eval $(ssh-agent -s)
-#     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
-#     - mkdir -p ~/.ssh
-#     - chmod 700 ~/.ssh
-#     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+#     - pwd
 #     - ls
-#     - echo "here"
-#     - ssh
-#     - sshpass -p $DEPLOY_PASS ssh $DEPLOY_USER@$DEPLOY_URL
+#     - composer install --prefer-dist --no-ansi --no-interaction --no-progress
+#     - cp .env.example .env
+#     - php artisan key:generate
+#     - ./vendor/phpunit/phpunit/phpunit -v --coverage-text --colors=never --stderr
+
+deploy_production:
+  stage: deploy
+  image: ubuntu:latest
+  only:
+    - master
+  script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - ls -a
+    - echo "here"
+    - ssh $DEPLOY_USER@$DEPLOY_URL
+    - ls
+    - pwd
+    # - sshpass -p $DEPLOY_PASS ssh $DEPLOY_USER@$DEPLOY_URL
 
