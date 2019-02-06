@@ -15,18 +15,19 @@ stages:
 
 deploy_production:
   stage: deploy
-  image: lorisleiva/laravel-docker:latest
+  image: ubuntu:latest
   only:
     - master
   before_script:
     - sudo apt-get update -qq && sudo apt-get install -y -qq sshpass
   script:
     - sshpass -V
-    # - sshpass -p $DEPLOY_PASS ssh $DEPLOY_USER@$DEPLOY_URL
     - eval $(ssh-agent -s)
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
-    - [[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
     - echo "here"
     - ssh
+    - sshpass -p $DEPLOY_PASS ssh $DEPLOY_USER@$DEPLOY_URL
+
