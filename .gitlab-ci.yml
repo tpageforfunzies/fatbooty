@@ -17,14 +17,13 @@ stages:
 
 deploy_production:
   stage: deploy
-  image: ubuntu:latest
   only:
     - master
   script:
     - pwd
     - whoami
     - ls -a
-    - cd /$DEPLOY_USER/fatbooty/
+    - cd /home/$DEPLOY_USER/fatbooty/
     - bash deploy.sh
     # - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
     # - eval $(ssh-agent -s)
