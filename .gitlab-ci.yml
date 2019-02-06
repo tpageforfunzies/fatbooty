@@ -1,25 +1,25 @@
 stages:
-  - build
+  # - build
   - deploy
 
-build:
-  stage: build
-  image: edbizarro/gitlab-ci-pipeline-php:7.2-alpine
-  script:
-    - pwd
-    - ls
-    - composer install --prefer-dist --no-ansi --no-interaction --no-progress
-    - cp .env.example .env
-    - php artisan key:generate
-    - ./vendor/phpunit/phpunit/phpunit -v --coverage-text --colors=never --stderr
+# build:
+#   stage: build
+#   image: edbizarro/gitlab-ci-pipeline-php:7.2-alpine
+#   script:
+#     - pwd
+#     - ls
+#     - composer install --prefer-dist --no-ansi --no-interaction --no-progress
+#     - cp .env.example .env
+#     - php artisan key:generate
+#     - ./vendor/phpunit/phpunit/phpunit -v --coverage-text --colors=never --stderr
 
 deploy_production:
   stage: deploy
-  image: edbizarro/gitlab-ci-pipeline-php:7.2-alpine
+  image: edbizarro/gitlab-ci-pipeline-php:7.2
   only:
     - master
   before_script:
-    - apk update -qq && apk install -y -qq sshpass
+    - apt-get update -qq && apt-get install -y -qq sshpass
   script:
     - sshpass -V
     - sshpass -p $DEPLOY_PASS ssh $DEPLOY_USER@$DEPLOY_URL bash fatbooty/deploy.sh
