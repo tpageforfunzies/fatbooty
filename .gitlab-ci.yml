@@ -21,17 +21,20 @@ deploy_production:
   only:
     - master
   script:
-    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
-    - eval $(ssh-agent -s)
-    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
-    - mkdir -p ~/.ssh
-    - chmod 700 ~/.ssh
-    - ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
-    - chmod 644 ~/.ssh/known_hosts
-    - ls -a
-    - echo "here"
-    - ssh $DEPLOY_USER@$DEPLOY_URL
-    - ls
     - pwd
+    - ls -a
+    # - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
+    # - eval $(ssh-agent -s)
+    # - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    # - mkdir -p ~/.ssh
+    # - chmod 700 ~/.ssh
+    # - ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
+    # - chmod 644 ~/.ssh/known_hosts
+    # - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    # - ls -a
+    # - echo "here"
+    # - ssh $DEPLOY_USER@$DEPLOY_URL
+    # - ls
+    # - pwd
     # - sshpass -p $DEPLOY_PASS ssh $DEPLOY_USER@$DEPLOY_URL
 
