@@ -19,7 +19,8 @@
 
 ##### Production
 
-Production (http://hackcity.software) is deployed on every new merge into master.
+Production (http://hackcity.software) is deployed on every new merge into master.<br>
+When this happens, a slack message is sent to the projects channel to notify everyone of a new release.
 
 ##### Local/Development
 
@@ -35,8 +36,7 @@ Branch off of latest master<br>
 Build the repo locally or on whatever development environment you want<br>
 Add your feature/functionality and test on your own. <br>
 When ready for review/merge open a pull request to master and CI/CD will trigger<br>
-That will build the app, and run unit tests for the branch<br>
-After all that, ping me on slack or discord or text me or something.
+That will build the app, run unit tests for the branch, and notify the slack channel of a new pull request<br>
 
 
 ## About Laravel
