@@ -193,6 +193,11 @@ header.banner .gridxl div .nav ul li a:hover {
   background: #0a142b;
 }
 
+.fold .content .uk-text-left .image img {
+  max-width: 400px;
+  margin-top: -125px;
+}
+
 /*!
  * Bootstrap v4.2.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors

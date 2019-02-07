@@ -49,6 +49,9 @@
             </a>
           </div>
         </div>
+        <div class="image uk-text-center uk-text-right@m uk-width-1-1 uk-width-1-2@m">
+          <img src="{{ asset('images/AI.png') }}">
+        </div>
       </div>
     </div>
 
