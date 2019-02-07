@@ -22,7 +22,7 @@ build_notify:
   only:
     - merge_requests
   script:
-    - curl -X POST -H 'Content-type: application/json' --data '{"text":"Merge request for master opened."}' https://hooks.slack.com/services/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
+    - curl -X POST -H $CURL_HEADERS --data $BUILD_BODY https://hooks.slack.com/services/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
 
 deploy_production:
   stage: deploy
@@ -40,4 +40,4 @@ deploy_notify:
   only:
     - master
   script:
-    - curl -X POST -H 'Content-type: application/json' --data '{"text":"Master deployed to http://hackcity.software"}' https://hooks.slack.com/services/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
+    - curl -X POST -H $CURL_HEADERS --data $DEPLOY_BODY https://hooks.slack.com/services/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
