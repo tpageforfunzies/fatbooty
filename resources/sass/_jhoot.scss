@@ -1,0 +1,39 @@
+body {
+  box-sizing: border-box;
+}
+
+/* JHOOT */
+
+/* GENERAL STYLING */ 
+
+.gridxl {
+  max-width: 1360px;
+  margin: 0 auto; 
+}
+.gridl {
+  max-width: 1100px;
+  margin: 0 auto; 
+}
+.gridm {
+  max-width: 959px;
+  margin: 0 auto; 
+}
+.grids {
+  max-width: 767px;
+  margin: 0 auto; 
+}
+
+/* HOME */  
+
+header.banner {
+  .gridl {
+    div {
+      .logo {
+        padding-top: 10px;
+      }
+      .cta {
+        padding-top: 30px;
+      }
+    }
+  }
+}

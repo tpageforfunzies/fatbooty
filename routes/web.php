@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/tpage', 'TpageController@index');
+
+Route::get('/jhoot', 'JhootController@index');
