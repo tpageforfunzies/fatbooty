@@ -1,17 +1,25 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+<div align="center"><img src="public/images/skull.jpg"></div>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+<div align="center">
+
+# Hack City
+
+</div>
+
+<div align="center">
+
+[![pipeline status](https://gitlab.com/tpageforfunzies/fatbooty/badges/master/pipeline.svg)](https://gitlab.com/tpageforfunzies/fatbooty/commits/master)
+
+</div>
+
+
+
 
 ## Deploying
 
 ##### Production
 
-This is still being manually deployed to the production host on master branch updates.
+Production (http://hackcity.software) is deployed on every new merge into master.
 
 ##### Local/Development
 
@@ -21,12 +29,14 @@ Navigate to the root dir fatbooty/<br>
 `bash build.sh dev`<br>
 This will spin up an instance of the app serving at `localhost:8000`
 
-##### Contributing
+## Contributing
 
 Branch off of latest master<br>
 Build the repo locally or on whatever development environment you want<br>
-Add your feature/functionality and test on your own.  CI/CD is still being worked on.  UT will be added to pipeline soon and phpunit is integrated already.<br>
-Open pull request to master branch and ping me on slack or discord or text me.
+Add your feature/functionality and test on your own. <br>
+When ready for review/merge open a pull request to master and CI/CD will trigger<br>
+That will build the app, and run unit tests for the branch<br>
+After all that, ping me on slack or discord or text me or something.
 
 
 ## About Laravel
