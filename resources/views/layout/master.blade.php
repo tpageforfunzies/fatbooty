@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700|Orienta|Trykker" rel="stylesheet">
 
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         

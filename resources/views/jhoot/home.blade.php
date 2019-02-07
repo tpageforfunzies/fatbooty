@@ -10,7 +10,7 @@
 
 @section('header')
   <header class="banner">
-    <div class="gridl">
+    <div class="gridxl">
       <div class="uk-grid-collapse uk-text-center" uk-grid>
         <div class="logo uk-width-1-1 uk-width-1-2@s uk-width-1-5@m">
           <a href="/jhoot" class="brand">
@@ -18,17 +18,13 @@
           </a>
         </div>
         <div class="nav uk-width-1-1 uk-width-1-2@s uk-width-3-5@m">
-          <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-            <div class="uk-navbar-right">
-              <ul class="uk-navbar-nav">
-                <li><a href="#">Link One</a></li>
-                <li><a href="#">Link Two</a></li>
-                <li><a href="#">Link Three</a></li>
-                <li><a href="#">Link Four</a></li>
-                <li><a href="#">Link Five</a></li>
-              </ul>
-            </div>
-          </nav>
+          <ul class="">
+            <li><a href="#">Link One</a></li>
+            <li><a href="#">Link Two</a></li>
+            <li><a href="#">Link Three</a></li>
+            <li><a href="#">Link Four</a></li>
+            <li><a href="#">Link Five</a></li>
+          </ul>
         </div>
         <div class="cta uk-width-1-1 uk-width-1-2@s uk-width-1-5@m">
           <a href="/jhoot" class="brand">
@@ -41,5 +37,26 @@
 @endsection
 
 @section('content')
-    
+  <section class="fold uk-section-large">
+    <div class="gridl content">
+      <div class="uk-text-left" uk-grid>
+        <div class="uk-width-1-1 uk-width-1-2@m">
+          <h3 class="color-white nm">This is the tagline for the site</h3>
+          <h1 class="color-white nm">Directory Site</h1>
+          <div class="cta">
+            <a href="#">
+              <span>Find X Now</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon fill="white" points="0,100 100,0 100,100"/>
+    </svg>
+  </section>
+  <section class="belowfold uk-section-large">
+
+  </section>
 @endsection
