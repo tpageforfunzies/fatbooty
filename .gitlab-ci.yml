@@ -21,8 +21,8 @@ build_notify:
   image: ubuntu:latest
   only:
     - merge_requests
-  script:
-    - curl -X POST -H 'Content-type: application/json' --data '{"text":"Merge request for master opened."}' https://hooks.slack.com/services/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
+  script: |-
+    curl -X POST -H 'Content-type: application/json' --data '{"text":"Merge request for master opened."}' https://hooks.slack.com/services/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
 
 deploy_production:
   stage: deploy
@@ -39,5 +39,5 @@ deploy_notify:
   image: ubuntu:latest
   only:
     - master
-  script:
-    - curl -X POST -H 'Content-type: application/json' --data '{"text":"Master deployed to http://hackcity.software"}' https://hooks.slack.com/services/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
+  script: |-
+    curl -X POST -H 'Content-type: application/json' --data '{"text":"Master deployed to http://hackcity.software"}' https://hooks.slack.com/services/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
