@@ -34,7 +34,7 @@ deploy_production:
     - sudo bash deploy.sh
 
 deploy_notify:
-  stage: build
+  stage: deploy
   image: ubuntu:latest
   only:
     - master
