@@ -28,7 +28,14 @@ Clone the repo via SSH.<br>
 Navigate to the root dir fatbooty/<br>
 `composer install` - ensure you have PHP >= 7.1.3 and Laravel >= 5.5<br>
 `bash build.sh dev`<br>
-This will spin up an instance of the app serving at `localhost:8000`
+This will spin up an instance of the app serving at `localhost:8000`<br>
+Visit `localhost:8000/db` to verify app and database are correct.
+
+## Database
+The repo comes with the development database info set up for immediate use.<br>
+Once deployed you can go to http://localhost:8000/db and see the current connection status <br>
+Please, for everyone's sake, don't do anything major (add or remove tables) without a migration.  Don't worry about <br>
+breaking it just use migrations so when you do break it we can roll it back.  
 
 ## Contributing
 
