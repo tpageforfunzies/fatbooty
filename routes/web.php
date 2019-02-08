@@ -15,12 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/db', function () {
-	$connectionStatus = DB::connection()
-					->getPdo()
-					->getAttribute(constant("PDO::ATTR_CONNECTION_STATUS"));
-	return view('utility.database', ['data' => $connectionStatus]);
-});
+Route::get('/db', 'DbController');
 
 Route::get('/tpage', 'TpageController@index');
 
