@@ -78,7 +78,7 @@
         <?php if(auth()->user()): ?>
             <p style="position: absolute; top: 5px; right: 5px;">Signed in as: <?= auth()->user()->name; ?></p>
             
-            <a style="color:red;" href="/logout">Logout</a>
+            <a style="color:red;position: absolute; top: 25px; right: 5px;" href="/logout">Logout</a>
         <?php endif; ?>
         @yield('content')
     </body>
