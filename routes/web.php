@@ -19,6 +19,8 @@ Route::get('/db', 'DbController');
 
 Route::get('/tpage', 'TpageController@index');
 
+Route::get('/ronchron', 'RonChrontroller@index');
+
 Route::get('/jhoot', 'JhootController@index');
 
 Auth::routes();
