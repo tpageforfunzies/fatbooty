@@ -75,7 +75,9 @@
     </head>
     <body>
         @yield('header')
-        <p style="position: absolute; top: 5px; right: 5px;">Signed in as: <?= auth()->user()->name; ?></p>
+        <?php if(auth()->user()): ?>
+            <p style="position: absolute; top: 5px; right: 5px;">Signed in as: <?= auth()->user()->name; ?></p>
+        <?php endif; ?>
         @yield('content')
     </body>
 </html>
