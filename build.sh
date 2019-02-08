@@ -3,7 +3,8 @@
 ENV="$1"
 
 if [ "$ENV" == "prod" ]; then
-	sudo cp .env.example .env
+	# below is temporarily unnecessary as we're deploying with dev until prod is ready
+	# sudo cp .env.example .env
 	sudo composer install
 	sudo php artisan key:generate
 	sudo chmod -R 777 storage
@@ -11,9 +12,10 @@ if [ "$ENV" == "prod" ]; then
 fi
 if [ "$ENV" == "dev" ]; then
 	# must manually composer install in the fatbooty/ root dir
-	sudo cp .env.example .env
-	sudo php artisan key:generate
-	sudo chmod -R 777 storage
-	sudo chmod -R 777 bootstrap/cache
-	sudo php artisan serve
+	# below is temporarily unnecessary as we're deploying with dev until prod is ready
+	# sudo cp .env.example .env
+	php artisan key:generate
+	chmod -R 777 storage
+	chmod -R 777 bootstrap/cache
+	php artisan serve
 fi
