@@ -25,6 +25,6 @@ Route::get('/db', function () {
 Route::get('/tpage', 'TpageController@index');
 
 Route::get('/jhoot', 'JhootController@index');
-Auth::routes();
 
+Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

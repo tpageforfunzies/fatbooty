@@ -1,6 +1,14 @@
-@extends('layouts.app')
+@extends('layout.master')
 
 @section('content')
+<style>
+    .body {
+        background-color: black;
+    }
+    .container {
+        margin-top: 30vh;
+    }
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
