@@ -12,7 +12,6 @@ build:
     - pwd
     - ls
     - composer install --prefer-dist --no-ansi --no-interaction --no-progress
-    - cp .env.example .env
     - php artisan key:generate
     - ./vendor/phpunit/phpunit/phpunit -v --coverage-text --colors=never --stderr
 
