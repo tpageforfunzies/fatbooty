@@ -185,47 +185,6 @@ header.banner {
   }
 }
 
-#statussection {
-  .gridxl {
-    > h2 {
-      margin-bottom: 15px;
-    }
-    .uk-grid {
-      div {
-        div.container {
-          max-width: 400px;
-          margin: 10px auto;
-          position: relative;
-          padding-right: 0;
-          padding-left: 0;
-          box-shadow: 0 4px 0 rgba(0,0,0,0.33);
-          border: 1px solid rgba(0,0,0,0.33);
-          img {
-            width: 100%;
-          }
-          .text {
-            padding: 10px 15px;
-            h2 {
-              margin-bottom: 2px;
-            }
-            span.status {
-              font-size: 24px;
-              font-weight: bold;
-              text-transform: uppercase;
-              padding: 5px 10px;
-              &.green {
-                color: green;
-              }
-              &.red {
-                color: red;
-              }
-            }
-          }
-        }
-        img {
-          
-        }
-      }
-    }
-  }
-}
+
+
+
