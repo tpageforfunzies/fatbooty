@@ -198,6 +198,47 @@ header.banner .gridxl div .nav ul li a:hover {
   margin-top: -125px;
 }
 
+#statussection .gridxl > h2 {
+  margin-bottom: 15px;
+}
+
+#statussection .gridxl .uk-grid div div.container {
+  max-width: 400px;
+  margin: 10px auto;
+  position: relative;
+  padding-right: 0;
+  padding-left: 0;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
+}
+
+#statussection .gridxl .uk-grid div div.container img {
+  width: 100%;
+}
+
+#statussection .gridxl .uk-grid div div.container .text {
+  padding: 10px 15px;
+}
+
+#statussection .gridxl .uk-grid div div.container .text h2 {
+  margin-bottom: 2px;
+}
+
+#statussection .gridxl .uk-grid div div.container .text span.status {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 5px 10px;
+}
+
+#statussection .gridxl .uk-grid div div.container .text span.status.green {
+  color: green;
+}
+
+#statussection .gridxl .uk-grid div div.container .text span.status.red {
+  color: red;
+}
+
 /*!
  * Bootstrap v4.2.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors

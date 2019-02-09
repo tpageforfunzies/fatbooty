@@ -20,6 +20,7 @@ Route::get('/db', 'DbController');
 Route::get('/tpage', 'TpageController@index');
 
 Route::get('/jhoot', 'JhootController@index');
+Route::get('/jhoot/status', 'JhootController@status');
 
 Auth::routes();
 Route::get('logout', 'Auth\LoginController@logout')->middleware('auth');
