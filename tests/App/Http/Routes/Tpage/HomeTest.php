@@ -19,7 +19,7 @@ class HomeTest extends TestCase
     {
     	$route = new Home();
 
-    	$this->assertTrue($route->middleware > 0);
+    	$this->assertTrue(count($route->middleware) > 0);
     	$this->assertTrue(in_array('web', $route->middleware));
     }
 }
