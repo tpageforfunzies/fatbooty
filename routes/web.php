@@ -25,6 +25,6 @@ Route::get('/jhoot', 'JhootController@index');
 Route::get('/jhoot/status', 'JhootController@status');
 
 Auth::routes();
-Route::get('logout', 'Auth\LoginController@logout')->middleware('auth');
+Route::get('/logout', 'Auth\LoginController@logout')->middleware('auth');
 
 Route::get('/home', 'HomeController@index')->name('home');
