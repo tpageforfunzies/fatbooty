@@ -29,13 +29,13 @@ Navigate to the root dir fatbooty/<br>
 `composer install` - ensure you have PHP >= 7.1.3 and Laravel >= 5.5<br>
 `bash build.sh dev`<br>
 This will spin up an instance of the app serving at `localhost:8000`<br>
-Visit `localhost:8000/db` to verify app and database are correct.
 
 ## Database
-The repo comes with the development database info set up for immediate use.<br>
-Once deployed you can go to http://localhost:8000/db and see the current connection status <br>
-Please, for everyone's sake, don't do anything major (add or remove tables) without a migration.  Don't worry about <br>
-breaking it just use migrations so when you do break it we can roll it back.  
+Up to you to set up a local database to use<br>
+Once you have it running, add it's info to your .env in the root dir<br>
+and add which driver you're using to the config/database.php file.<br>
+Re-deploy and go to localhost:8000/db to verify your local database connection.<br>
+From there run migrations to get it up to date with `php artisan migrate`.<br>
 
 ## Contributing
 
