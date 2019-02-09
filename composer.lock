@@ -4,8 +4,49 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66ca7343889332c2b8ecca11c251430c",
+    "content-hash": "9bbb2bd02ebed6b47351a6859b6d8243",
     "packages": [
+        {
+            "name": "camroncade/timezone",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/camroncade/timezone.git",
+                "reference": "9d0c12bb96efbfeb97f122b40aca66f804ae98db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/camroncade/timezone/zipball/9d0c12bb96efbfeb97f122b40aca66f804ae98db",
+                "reference": "9d0c12bb96efbfeb97f122b40aca66f804ae98db",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=4.2",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/migrations"
+                ],
+                "psr-0": {
+                    "Camroncade\\Timezone\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Camron Cade",
+                    "email": "camron@camroncade.com"
+                }
+            ],
+            "description": "Helps manage timezones in Laravel. Includes <select> form builder for timezones.",
+            "homepage": "http://www.camroncade.com/managing-timezones-with-laravel/",
+            "time": "2015-05-20T20:32:03+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
@@ -636,6 +677,184 @@
             ],
             "description": "Highlight PHP code in terminal",
             "time": "2018-09-29T18:48:56+00:00"
+        },
+        {
+            "name": "jumpgate/core",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JumpGateio/Core.git",
+                "reference": "505b35cc2de0718f283b3ff452c5abe69df4a9ac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JumpGateio/Core/zipball/505b35cc2de0718f283b3ff452c5abe69df4a9ac",
+                "reference": "505b35cc2de0718f283b3ff452c5abe69df4a9ac",
+                "shasum": ""
+            },
+            "require": {
+                "camroncade/timezone": "^0.1.0",
+                "jumpgate/database": "~1.0",
+                "laracasts/utilities": "~3.0",
+                "laravel/framework": "^5.0"
+            },
+            "require-dev": {
+                "fzaninotto/faker": "~1.4",
+                "mockery/mockery": "~1.0",
+                "orchestra/testbench": "~3.7",
+                "phpunit/phpunit": "~7.0"
+            },
+            "suggest": {
+                "jumpgate/database": "Database helpers and collection additions.",
+                "jumpgate/menu": "Full featured menu system.",
+                "jumpgate/users": "A complete user solution.",
+                "jumpgate/view-resolution": "Automatic view resolution."
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Camroncade\\Timezone\\TimezoneServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers/api.php",
+                    "src/helpers/base.php",
+                    "src/helpers/math.php",
+                    "src/helpers/numbers.php",
+                    "src/helpers/route.php",
+                    "src/helpers/strings.php",
+                    "src/helpers/time.php"
+                ],
+                "psr-4": {
+                    "JumpGate\\Core\\": "src/JumpGate/Core"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stygian",
+                    "email": "stygian.warlock.v2@gmail.com"
+                },
+                {
+                    "name": "Riddles",
+                    "email": "riddles@dev-toolbox.com"
+                }
+            ],
+            "description": "A core set of features for laravel sites.",
+            "time": "2018-09-10T20:24:52+00:00"
+        },
+        {
+            "name": "jumpgate/database",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JumpGateio/Database.git",
+                "reference": "0d857a1fa85a66dfe380ab153feaa3b167339822"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JumpGateio/Database/zipball/0d857a1fa85a66dfe380ab153feaa3b167339822",
+                "reference": "0d857a1fa85a66dfe380ab153feaa3b167339822",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^5.0",
+                "illuminate/support": "^5.0"
+            },
+            "require-dev": {
+                "fzaninotto/faker": "~1.4",
+                "mockery/mockery": "0.9.*",
+                "orchestra/testbench": "~3.4",
+                "phpunit/phpunit": "~5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "JumpGate\\Database\\": "src/JumpGate/Database"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brandon Hyde",
+                    "email": "hyde.brandon@gmail.com"
+                },
+                {
+                    "name": "Travis Blasingame",
+                    "email": "tpblasingame@gmail.com"
+                }
+            ],
+            "description": "Database helpers for Laravel sites.",
+            "time": "2017-08-04T14:05:40+00:00"
+        },
+        {
+            "name": "laracasts/utilities",
+            "version": "3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                "reference": "298fb3c6f29901a4550c4f98b57c05f368341d04"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/298fb3c6f29901a4550c4f98b57c05f368341d04",
+                "reference": "298fb3c6f29901a4550c4f98b57c05f368341d04",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laracasts\\Utilities\\JavaScript\\JavaScriptServiceProvider"
+                    ],
+                    "aliases": {
+                        "JavaScript": "Laracasts\\Utilities\\JavaScript\\JavaScriptFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Laracasts\\Utilities\\JavaScript\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Transform your PHP to JavaScript",
+            "keywords": [
+                "javascript",
+                "laravel"
+            ],
+            "time": "2017-09-01T17:25:57+00:00"
         },
         {
             "name": "laravel/framework",
