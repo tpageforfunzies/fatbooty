@@ -24,6 +24,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected $providers = [
         \App\Http\Routes\Common\Home::class,
+        \App\Http\Routes\Tpage\Home::class,
+        \App\Http\Routes\Utility\Database::class,
     ];
 
     public function __construct($app)

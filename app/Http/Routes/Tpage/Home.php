@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Routes\Common;
+namespace App\Http\Routes\Tpage;
 
 use JumpGate\Core\Contracts\Routes;
 use JumpGate\Core\Http\Routes\BaseRoute;
@@ -14,11 +14,11 @@ class Home extends BaseRoute implements Routes
 
     public function routes(Router $router)
     {
-        $router->get('/')
+        $router->get('/tpage')
                ->name('home')
-               ->uses('HomeController@index');
-        $router->get('/home')
+               ->uses('TpageController@index');
+        $router->get('/tpage/home')
                ->name('home')
-               ->uses('HomeController@index');
+               ->uses('TpageController@index');
     }
 }
