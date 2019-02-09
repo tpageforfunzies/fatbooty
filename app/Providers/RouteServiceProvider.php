@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Route;
+use JumpGate\Core\Contracts\Routes;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -17,13 +18,44 @@ class RouteServiceProvider extends ServiceProvider
     protected $namespace = 'App\Http\Controllers';
 
     /**
+     * Route providers that contain the configuration of a route group.
+     *
+     * @var array
+     */
+    protected $providers = [
+        \App\Http\Routes\Common\Home::class,
+        \App\Http\Routes\Tpage\Home::class,
+        \App\Http\Routes\Utility\Database::class,
+    ];
+
+    public function __construct($app)
+    {
+        parent::__construct($app);
+
+        if (empty($this->providers)) {
+            $this->getProvidersFromServicesConfig();
+        }
+    }
+
+    /**
      * Define your route model bindings, pattern filters, etc.
      *
      * @return void
      */
     public function boot()
     {
-        //
+        $router = $this->app['router'];
+
+        foreach ($this->providers as $key => $provider) {
+            $provider = new $provider;
+
+            if (! $provider instanceof Routes) {
+                unset($this->providers[$key]);
+                continue;
+            }
+
+            $router->patterns($provider->getPatterns());
+        }
 
         parent::boot();
     }
@@ -39,7 +71,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        //
+        $this->mapRouteClasses();
     }
 
     /**
@@ -69,5 +101,45 @@ class RouteServiceProvider extends ServiceProvider
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
+    }
+
+    /**
+     * Convert class route files into valid routes.
+     */
+    private function mapRouteClasses()
+    {
+        $router = $this->app['router'];
+
+        foreach ($this->providers as $provider) {
+            $provider = new $provider;
+
+            $router->group([
+                'prefix'     => $provider->getPrefix(),
+                'namespace'  => $provider->getNamespace(),
+                'middleware' => $provider->getMiddleware(),
+            ], function ($router) use ($provider) {
+                $provider->routes($router);
+            });
+        }
+    }
+
+    /**
+     * Get an array of providers from the services.json.
+     */
+    private function getProvidersFromServicesConfig()
+    {
+        if (file_exists(base_path('bootstrap/services.json'))) {
+            $services = collect(
+                json_decode(
+                    file_get_contents(base_path('bootstrap/services.json'))
+                )
+            );
+
+            $this->providers = $services->flatMap(function ($service) {
+                if (isset($service->routes)) {
+                    return $service->routes;
+                }
+            })->toArray();
+        }
     }
 }
