@@ -18,7 +18,7 @@ class Home extends BaseRoute implements Routes
                ->name('home')
                ->uses('HomeController@index');
         $router->get('/home')
-               ->name('home')
+               ->name('home.home')
                ->uses('HomeController@index');
     }
 }
