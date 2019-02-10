@@ -9,7 +9,7 @@
 <div align="center">
 
 [![pipeline status](https://gitlab.com/tpageforfunzies/fatbooty/badges/master/pipeline.svg)](https://gitlab.com/tpageforfunzies/fatbooty/commits/master)
-
+ 
 </div>
 
 
