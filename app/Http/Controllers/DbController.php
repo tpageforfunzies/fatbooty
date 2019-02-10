@@ -15,9 +15,13 @@ class DbController extends Controller
 		 * 
 		 * @return View
 		 */
-		$connectionStatus = DB::connection()
-					->getPdo()
-					->getAttribute(constant("PDO::ATTR_CONNECTION_STATUS"));
-		return view('utility.database', ['data' => $connectionStatus]);
+
+		try {
+			$connectionName = 'Connected to: ' . DB::connection()->getname();
+		} catch (Exception $e) {
+			$connectionName = 'Database name unavailable.  Check connection.';
+		}
+
+		return view('utility.database', ['data' => $connectionName]);
 	}
 }
