@@ -11,7 +11,9 @@ if [ "$ENV" == "prod" ]; then
 fi
 if [ "$ENV" == "dev" ]; then
 	# must manually composer install in the fatbooty/ root dir
-	cp .env.example .env
+	if [ ! -f ".env" ]; then
+		cp .env.example .env
+	fi
 	php artisan key:generate
 	chmod -R 777 storage
 	chmod -R 777 bootstrap/cache
