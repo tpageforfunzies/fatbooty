@@ -8,7 +8,7 @@ use Illuminate\Routing\Router;
 
 class Database extends BaseRoute implements Routes
 {
-    public $namespace = 'App\Http\Controllers';
+    public $namespace = 'App\Http\Controllers\Utility';
 
     public $middleware = ['web'];
 
