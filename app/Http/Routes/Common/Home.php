@@ -8,7 +8,7 @@ use Illuminate\Routing\Router;
 
 class Home extends BaseRoute implements Routes
 {
-    public $namespace = 'App\Http\Controllers';
+    public $namespace = 'App\Http\Controllers\Common';
 
     public $middleware = ['web'];
 
