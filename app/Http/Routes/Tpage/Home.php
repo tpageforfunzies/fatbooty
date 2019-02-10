@@ -15,10 +15,10 @@ class Home extends BaseRoute implements Routes
     public function routes(Router $router)
     {
         $router->get('/tpage')
-               ->name('home')
+               ->name('tpage')
                ->uses('TpageController@index');
         $router->get('/tpage/home')
-               ->name('home')
+               ->name('tpage.home')
                ->uses('TpageController@index');
     }
 }
